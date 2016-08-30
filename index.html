@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Document</title>
+
+<script type="text/javascript">
+	document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth + 'px';	
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/game.css">
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
+
+<script type="text/javascript">
+$(function (){
+	$("#join").on("click",function (){
+		
+	});
+});	
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="loding">
+			<div class="loader">加载中...</div>
+		</div>
+		
+
+		<div id="start_bg">
+			<div id="start_button"></div>
+		</div>
+		<div id="end_bg">
+			<span>0</span>
+			<span>0</span>
+			<p>堪称MVP级的表现！</p>
+			<div id="reset_game"></div>
+			<div id="join"></div>
+		</div>
+		
+		<div id="ball"></div>
+		<div id="ball_shadow"></div>
+
+		<div id="ball2"></div>
+		<div id="ball_shadow2"></div>
+
+		<div id="ball3"></div>
+		<div id="ball_shadow3"></div>
+
+		<div id="stands">
+			<div id="hoop_top"></div>
+			<div id="hoop_bottom"></div>
+			<div id="net"></div>
+		</div>
+
+		<div id="score">00</div>
+		<div id="time">20</div>
+
+		
+		<div id='div1'></div>
+		
+
+	</div>
+</body>
+</html>
