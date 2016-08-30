@@ -1,0 +1,106 @@
+*{ margin: 0; padding: 0;}
+html,body { height: 100%; overflow: hidden;}       /*  translateZ(0px); */
+body { font-family: '微软雅黑';}
+#wrap { width: 100%; max-width: 640px; margin: 0 auto; overflow: hidden; height: 100%; background: url(../img/bg.jpg)0 0 no-repeat; background-size: 100% 100%; margin: 0px auto; position: relative; -webkit-transform-style:preserve-3d; -webkit-perspective:800; -webkit-transform-origin: center center; }	
+
+#start_bg { height: 100%; background: url(../img/start_bg.jpg)0 0 no-repeat; background-size: 100% 100%; position: relative; z-index: 999;}
+#end_bg { width: 83.90625%; height: 36.70634%; position: absolute; top: 28.07539%; left: 0; right: 0; margin: auto; background: url(../img/emd_bg.png)0 0 no-repeat; background-size: 100% 100%; z-index: 9999;  display: none;}
+#end_bg span { font-size: 0.17rem; line-height: 0.17rem; color: #ffffff;  position: absolute; top:28%; left: 55%; }
+#end_bg span:nth-child(2){ left: 73%; }
+#end_bg p { font-size: 0.038rem; line-height: 0.038rem; color: #d82e02;  position: absolute; top:62%; left: 49%;}
+#reset_game,#join { width: 22.34636%; height: 11.89189%; position: absolute; top: 75.94594%; left: 46.18249%; background: url(../img/reset_game.png)0 0 no-repeat; background-size: 100% 100%;  }
+#join { left: 69.45996%;  background: url(../img/join.png)0 0 no-repeat; background-size: 100% 100%;}
+#start_button { background: url(../img/start.png)0 0 no-repeat; background-size: 100% 100%;  width: 42.34375%; height: 9.32539%; position: absolute; top: 64.48412%; left: 0; right: 0; margin: auto; }
+
+#ball,#ball2,#ball3 { width: 0.2rem; height: 0.2rem; border-radius: 50%; background: url(../img/ball.png)0 0 no-repeat; background-size: 100% 100%; position: absolute; top: 80%; left: 41%; -webkit-transform-origin: left top; -webkit-transform: scale(1) translateZ(0px); -webkit-transition:-webkit-transform 0.9s ;
+	 /* -webkit-transform: scale(0.5); -webkit-transition:all 0.5s ; */  z-index: 2; opacity: 1; }
+#ball_shadow,#ball_shadow2,#ball_shadow3 { width: 0.2rem; height: 0.05rem; background: url(../img/ball_shadow.png); background-size: 100% 100%; position: absolute; top: 90%; left: 41%; border-radius: 50%;  }
+#ball2 { left: 11%}
+#ball3 { left: 71%}
+#ball_shadow2 { left: 11%}
+#ball_shadow3 { left: 71%}
+
+#stands { width: 56%; height: 20.93253%; background: url(../img/stands.jpg)0 0 no-repeat; background-size: 100% 100%; position: absolute; top: 19.84126%; left: 0; right: 0; margin: auto; }
+#hoop_top,#hoop_bottom { width: 38%; height: 15%; background: url(../img/hoop_top.png)0 0 no-repeat; background-size: 100% 100%; position: absolute; top: 80.09478%; left: 0; right: 0; margin: auto; }
+#hoop_bottom { background: url(../img/hoop_bottom.png)0 0 no-repeat; background-size: 100% 100%; z-index: 1;}
+#net { width: 35.81267%; height: 66.82464%; background: url(../img/net.png)0 0 no-repeat; background-size: 100% 100%; position: absolute; top: 86.25592%; left: 0; right: 0; margin: auto; z-index: 1; -webkit-transform-origin: top center; -webkit-transition:-webkit-transform 0.1s; -webkit-transform: rotateX(0deg); } 
+
+#score,#time { font-size: 0.09rem; line-height: 0.09rem; color: #ea2d2c; font-weight: bold; position: absolute; top: 13.8%; left: 32.96875%; }
+#time { left: 64%;}
+
+#div1 { width: 100%; height: 10px; background: #000; position: absolute; top: 80%; left: 0;  display: none; }
+
+@-webkit-keyframes netChange {
+		
+	0% { -webkit-transform: rotateX(0deg); }
+
+	50% { -webkit-transform: rotateX(30deg); }
+
+	100% { -webkit-transform: rotateX(0deg); }
+
+}
+
+
+/******************************/
+#loding { width: 100%;  height: 100%; background: #000; position: absolute; top: 0; left: 0; z-index: 99999; display: -none;}
+.loader {
+	/* color: #fff; */
+	font-size: 90px;
+	/* text-indent: -9999em; */
+	overflow: hidden;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	-webkit-animation: load6 1.7s infinite ease;
+	animation: load6 1.7s infinite ease;
+	}
+	@-webkit-keyframes load6 {
+	0% {
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	box-shadow: -0.11em -0.83em 0 -0.4em #ffffff, -0.11em -0.83em 0 -0.42em #ffffff, -0.11em -0.83em 0 -0.44em #ffffff, -0.11em -0.83em 0 -0.46em #ffffff, -0.11em -0.83em 0 -0.477em #ffffff;
+	}
+	5%,
+	95% {
+	box-shadow: -0.11em -0.83em 0 -0.4em #ffffff, -0.11em -0.83em 0 -0.42em #ffffff, -0.11em -0.83em 0 -0.44em #ffffff, -0.11em -0.83em 0 -0.46em #ffffff, -0.11em -0.83em 0 -0.477em #ffffff;
+	}
+	30% {
+	box-shadow: -0.11em -0.83em 0 -0.4em #ffffff, -0.51em -0.66em 0 -0.42em #ffffff, -0.75em -0.36em 0 -0.44em #ffffff, -0.83em -0.03em 0 -0.46em #ffffff, -0.81em 0.21em 0 -0.477em #ffffff;
+	}
+	55% {
+	box-shadow: -0.11em -0.83em 0 -0.4em #ffffff, -0.29em -0.78em 0 -0.42em #ffffff, -0.43em -0.72em 0 -0.44em #ffffff, -0.52em -0.65em 0 -0.46em #ffffff, -0.57em -0.61em 0 -0.477em #ffffff;
+	}
+	100% {
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+	box-shadow: -0.11em -0.83em 0 -0.4em #ffffff, -0.11em -0.83em 0 -0.42em #ffffff, -0.11em -0.83em 0 -0.44em #ffffff, -0.11em -0.83em 0 -0.46em #ffffff, -0.11em -0.83em 0 -0.477em #ffffff;
+	}
+	}
+	@keyframes load6 {
+	0% {
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	box-shadow: -0.11em -0.83em 0 -0.4em #ffffff, -0.11em -0.83em 0 -0.42em #ffffff, -0.11em -0.83em 0 -0.44em #ffffff, -0.11em -0.83em 0 -0.46em #ffffff, -0.11em -0.83em 0 -0.477em #ffffff;
+	}
+	5%,
+	95% {
+	box-shadow: -0.11em -0.83em 0 -0.4em #ffffff, -0.11em -0.83em 0 -0.42em #ffffff, -0.11em -0.83em 0 -0.44em #ffffff, -0.11em -0.83em 0 -0.46em #ffffff, -0.11em -0.83em 0 -0.477em #ffffff;
+	}
+	30% {
+	box-shadow: -0.11em -0.83em 0 -0.4em #ffffff, -0.51em -0.66em 0 -0.42em #ffffff, -0.75em -0.36em 0 -0.44em #ffffff, -0.83em -0.03em 0 -0.46em #ffffff, -0.81em 0.21em 0 -0.477em #ffffff;
+	}
+	55% {
+	box-shadow: -0.11em -0.83em 0 -0.4em #ffffff, -0.29em -0.78em 0 -0.42em #ffffff, -0.43em -0.72em 0 -0.44em #ffffff, -0.52em -0.65em 0 -0.46em #ffffff, -0.57em -0.61em 0 -0.477em #ffffff;
+	}
+	100% {
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+	box-shadow: -0.11em -0.83em 0 -0.4em #ffffff, -0.11em -0.83em 0 -0.42em #ffffff, -0.11em -0.83em 0 -0.44em #ffffff, -0.11em -0.83em 0 -0.46em #ffffff, -0.11em -0.83em 0 -0.477em #ffffff;
+	}
+}
